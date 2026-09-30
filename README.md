@@ -14,9 +14,11 @@ Hugo Pereira - 51721
 
 Tech stack
 Frontend - React
-Backend - Java, Spring Boot, Hibernate
-Database - MySQL
-Build - Maven
+Backend - Java, Spring Boot
+Database - MySQL, Hibernate
+Build - Maven, Npm
+
+See [docs/tech-stack.md](docs/tech-stack.md) for the justification
 
 Project Status
 Sprint 1 - Project foundation (in progress)
