@@ -1,0 +1,414 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2050" height="1440" viewBox="0 0 2050 1440" font-family="Liberation Sans, Arial, Helvetica, sans-serif">
+<defs><marker id="tri" viewBox="0 0 14 14" refX="13" refY="7" markerWidth="14" markerHeight="14" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,1 L13,7 L1,13 z" fill="#fff" stroke="#3A3A3A" stroke-width="1.1"/></marker><marker id="open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#3A3A3A" stroke-width="1.1"/></marker><marker id="dia" viewBox="0 0 18 10" refX="17" refY="5" markerWidth="18" markerHeight="10" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,5 L9,1 L17,5 L9,9 z" fill="#3A3A3A" stroke="#3A3A3A" stroke-width="1"/></marker><marker id="odia" viewBox="0 0 18 10" refX="17" refY="5" markerWidth="18" markerHeight="10" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,5 L9,1 L17,5 L9,9 z" fill="#fff" stroke="#3A3A3A" stroke-width="1"/></marker></defs>
+<rect width="2050" height="1440" fill="#ffffff"/>
+<text x="40.0" y="50.0" font-size="28" text-anchor="start" font-weight="bold" font-style="normal" fill="#000">Domain Model – StudyMatch</text>
+<path d="M675.0,360.0 L675.0,320.0 L948.0,320.0 L948.0,280.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#tri)"/>
+<path d="M945.5,360.0 L945.5,320.0 L948.0,320.0 L948.0,280.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#tri)"/>
+<path d="M1254.9,360.0 L1254.9,320.0 L948.0,320.0 L948.0,280.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#tri)"/>
+<path d="M129.2,254.0 L129.2,330.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M218.5,179.6 L300.0,179.6" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M345.0,240.0 L345.0,351.6 L268.5,351.6" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#odia)"/>
+<path d="M131.4,510.0 L131.4,640.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M340.0,454.0 L268.5,454.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M415.0,488.0 L415.0,640.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M869.1,442.0 L869.1,454.0 L490.0,454.0" fill="none" stroke="#3A3A3A" stroke-width="1.1"/>
+<path d="M415.0,420.0 L415.0,397.4 L600.0,397.4" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M1150.0,589.4 L773.5,589.4" fill="none" stroke="#3A3A3A" stroke-width="1.1"/>
+<path d="M620.0,590.0 L234.2,590.0 L234.2,510.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M620.0,653.7 L524.8,653.7 L524.8,683.4 L499.8,683.4" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M773.5,632.6 L964.6,632.6 L964.6,442.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M1244.4,596.0 L1244.4,768.7 L1150.0,768.7" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M1045.0,822.0 L1045.0,880.0 L300.5,880.0 L300.5,488.4 L268.5,488.4" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M1105.0,740.0 L1105.0,490.0 L712.5,490.0 L712.5,428.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M1359.8,569.8 L1450.0,569.8" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M1678.5,548.8 L1760.0,548.8" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M1846.1,616.0 L1846.1,1238.0 L18.0,1238.0 L18.0,695.0 L40.0,695.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M600.0,1007.2 L320.5,1007.2 L320.5,504.6 L268.5,504.6" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M600.0,1054.4 L419.9,1054.4 L419.9,764.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M878.5,976.5 L903.5,976.5 L903.5,442.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M878.5,1001.4 L960.0,1001.4" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M1163.5,992.8 L1260.0,992.8" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M1346.1,960.0 L1346.1,746.0 L1328.3,746.0 L1328.3,596.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M1432.2,993.0 L1580.0,993.0" fill="none" stroke="#3A3A3A" stroke-width="1.1"/>
+<path d="M1580.0,1037.0 L1432.2,1037.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-end="url(#open)"/>
+<path d="M1643.9,1070.0 L1643.9,1130.0" fill="none" stroke="#3A3A3A" stroke-width="1.1" marker-start="url(#dia)"/>
+<path d="M1328.9,1042.0 L1328.9,1130.0" fill="none" stroke="#3A3A3A" stroke-width="1.1"/>
+<path d="M600.0,373.6 L268.5,373.6" fill="none" stroke="#7A7A7A" stroke-width="1.1" stroke-dasharray="6,4" marker-end="url(#open)"/>
+<path d="M750.0,380.4 L850.0,380.4" fill="none" stroke="#7A7A7A" stroke-width="1.1" stroke-dasharray="6,4" marker-end="url(#open)"/>
+<path d="M750.0,411.0 L764.0,411.0 L764.0,350.0 L1132.0,350.0 L1132.0,388.3 L1150.0,388.3" fill="none" stroke="#7A7A7A" stroke-width="1.1" stroke-dasharray="6,4" marker-end="url(#open)"/>
+<path d="M615.0,428.0 L615.0,624.0 L212.8,624.0 L212.8,640.0" fill="none" stroke="#7A7A7A" stroke-width="1.1" stroke-dasharray="6,4" marker-end="url(#open)"/>
+<rect x="133.2" y="258.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="134.2" y="268.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="133.2" y="314.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="134.2" y="324.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1..*</text>
+<rect x="225.5" y="164.6" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="226.5" y="174.6" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="266.2" y="164.6" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="292.0" y="174.6" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="349.0" y="244.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="350.0" y="254.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..1</text>
+<rect x="275.5" y="336.6" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="276.5" y="346.6" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">2..*</text>
+<rect x="321.7" y="281.8" width="46.6" height="13" fill="#fff" opacity="0.9"/>
+<text x="345.0" y="291.8" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">options</text>
+<rect x="135.4" y="514.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="136.4" y="524.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="135.4" y="624.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="136.4" y="634.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..1</text>
+<rect x="137.4" y="569.0" width="64.0" height="13" fill="#fff" opacity="0.9"/>
+<text x="169.4" y="579.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">belongs to</text>
+<rect x="306.2" y="439.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="332.0" y="449.0" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="275.5" y="439.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="276.5" y="449.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="419.0" y="492.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="420.0" y="502.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="419.0" y="624.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="420.0" y="634.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="873.1" y="446.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="874.1" y="456.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="497.0" y="439.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="498.0" y="449.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="419.0" y="404.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="420.0" y="414.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="584.8" y="382.4" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="592.0" y="392.4" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="472.6" y="383.4" width="69.8" height="13" fill="#fff" opacity="0.9"/>
+<text x="507.5" y="393.4" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">assigned by</text>
+<rect x="1134.8" y="574.4" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1142.0" y="584.4" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="780.5" y="574.4" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="781.5" y="584.4" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="586.2" y="575.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="612.0" y="585.0" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="238.2" y="514.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="239.2" y="524.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="586.2" y="638.7" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="612.0" y="648.7" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="506.8" y="668.4" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="507.8" y="678.4" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="780.5" y="617.6" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="781.5" y="627.6" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="968.6" y="446.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="969.6" y="456.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..1</text>
+<rect x="969.5" y="505.7" width="58.2" height="13" fill="#fff" opacity="0.9"/>
+<text x="998.6" y="515.7" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">graded by</text>
+<rect x="1248.4" y="600.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1249.4" y="610.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1157.0" y="753.7" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1158.0" y="763.7" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="1049.0" y="826.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1050.0" y="836.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="275.5" y="473.4" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="276.5" y="483.4" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="719.3" y="866.0" width="81.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="760.0" y="876.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">equivalent to</text>
+<rect x="1109.0" y="724.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1110.0" y="734.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="716.5" y="432.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="717.5" y="442.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1029.9" y="476.0" width="69.8" height="13" fill="#fff" opacity="0.9"/>
+<text x="1064.8" y="486.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">credited by</text>
+<rect x="1366.8" y="554.8" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1367.8" y="564.8" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1434.8" y="554.8" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1442.0" y="564.8" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1685.5" y="533.8" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1686.5" y="543.8" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1726.2" y="533.8" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1752.0" y="543.8" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="1850.1" y="620.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1851.1" y="630.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="24.8" y="680.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="32.0" y="690.0" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="566.2" y="992.2" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="592.0" y="1002.2" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="275.5" y="489.6" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="276.5" y="499.6" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="566.2" y="1039.4" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="592.0" y="1049.4" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="423.9" y="768.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="424.9" y="778.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="885.5" y="961.5" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="886.5" y="971.5" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="907.5" y="446.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="908.5" y="456.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="837.5" y="910.0" width="64.0" height="13" fill="#fff" opacity="0.9"/>
+<text x="869.5" y="920.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">created by</text>
+<rect x="885.5" y="986.4" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="886.5" y="996.4" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="926.2" y="986.4" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="952.0" y="996.4" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="1170.5" y="977.8" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1171.5" y="987.8" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1226.2" y="977.8" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1252.0" y="987.8" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">2..*</text>
+<rect x="1350.1" y="944.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1351.1" y="954.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="1332.3" y="600.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1333.3" y="610.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1439.2" y="978.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1440.2" y="988.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1546.2" y="978.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1572.0" y="988.0" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="1479.9" y="979.0" width="52.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="1506.1" y="989.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">reviewer</text>
+<rect x="1546.2" y="1022.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1572.0" y="1032.0" font-size="10.5" text-anchor="end" font-weight="normal" font-style="normal" fill="#222">0..*</text>
+<rect x="1439.2" y="1022.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1440.2" y="1032.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1479.9" y="1023.0" width="52.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="1506.1" y="1033.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">reviewed</text>
+<rect x="1647.9" y="1074.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1648.9" y="1084.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1647.9" y="1114.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1648.9" y="1124.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">4</text>
+<rect x="1332.9" y="1046.0" width="8.2" height="13" fill="#fff" opacity="0.85"/>
+<text x="1333.9" y="1056.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">1</text>
+<rect x="1332.9" y="1114.0" width="26.8" height="13" fill="#fff" opacity="0.85"/>
+<text x="1333.9" y="1124.0" font-size="10.5" text-anchor="start" font-weight="normal" font-style="normal" fill="#222">0..1</text>
+<rect x="1333.4" y="1080.0" width="35.0" height="13" fill="#fff" opacity="0.9"/>
+<text x="1350.9" y="1090.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="normal" fill="#222">gives</text>
+<rect x="548.8" y="359.6" width="52.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="575.0" y="369.6" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="italic" fill="#555">«create»</text>
+<rect x="773.8" y="366.4" width="52.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="800.0" y="376.4" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="italic" fill="#555">«create»</text>
+<rect x="1069.3" y="336.0" width="52.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="1095.5" y="346.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="italic" fill="#555">«create»</text>
+<rect x="423.8" y="610.0" width="52.4" height="13" fill="#fff" opacity="0.9"/>
+<text x="450.0" y="620.0" font-size="10.5" text-anchor="middle" font-weight="normal" font-style="italic" fill="#555">«create»</text>
+<rect x="40" y="130" width="178.5" height="124" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="40" y="130" width="178.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="129.2" y="146.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">StudyPlan</text>
+<text x="47.0" y="169.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-programmeName: String</text>
+<text x="47.0" y="183.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-durationYears: int = 3</text>
+<text x="47.0" y="197.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-totalEcts: int = 180</text>
+<line x1="40" y1="204" x2="218.5" y2="204" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="47.0" y="219.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+addCourseUnit(): void</text>
+<text x="47.0" y="233.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+curricularYearEcts(): int</text>
+<text x="47.0" y="247.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+canAccommodate(): boolean</text>
+<rect x="300" y="130" width="150.0" height="110" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="300" y="130" width="150.0" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="375.0" y="146.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">OptionGroup</text>
+<text x="307.0" y="169.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-name: String</text>
+<text x="307.0" y="183.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-curricularYear: int</text>
+<text x="307.0" y="197.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-semester: int</text>
+<text x="307.0" y="211.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-ects: int</text>
+<line x1="300" y1="218" x2="450.0" y2="218" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="307.0" y="233.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+addOption(): void</text>
+<rect x="40" y="330" width="228.5" height="180" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="40" y="330" width="228.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="154.2" y="346.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">CourseUnit</text>
+<text x="47.0" y="369.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-code: String</text>
+<text x="47.0" y="383.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-name: String</text>
+<text x="47.0" y="397.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-ects: int</text>
+<text x="47.0" y="411.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-curricularYear: int</text>
+<text x="47.0" y="425.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-semester: int</text>
+<text x="47.0" y="439.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-type: CourseUnitType</text>
+<line x1="40" y1="446" x2="268.5" y2="446" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="47.0" y="461.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+setKnowledgeArea(): void</text>
+<text x="47.0" y="475.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+removeKnowledgeArea(): void</text>
+<text x="47.0" y="489.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+hasKnowledgeArea(): boolean</text>
+<text x="47.0" y="503.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+enrolledStudents(): List&lt;Student&gt;</text>
+<rect x="40" y="640" width="216.0" height="110" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="40" y="640" width="216.0" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="148.0" y="656.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">KnowledgeArea</text>
+<text x="47.0" y="679.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-name: String</text>
+<text x="47.0" y="693.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-description: String</text>
+<line x1="40" y1="700" x2="256.0" y2="700" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="47.0" y="715.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+hasSameName(): boolean</text>
+<text x="47.0" y="729.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+canBeDeleted(): boolean</text>
+<text x="47.0" y="743.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+courseUnits(): List&lt;CourseUnit&gt;</text>
+<rect x="340" y="420" width="150.0" height="68" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="340" y="420" width="150.0" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="415.0" y="436.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">TeachingAssignment</text>
+<line x1="340" y1="466" x2="490.0" y2="466" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="340" y="640" width="159.8" height="124" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="340" y="640" width="159.8" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="419.9" y="656.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">AcademicYear</text>
+<text x="347.0" y="679.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-startDate: Date</text>
+<text x="347.0" y="693.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-endDate: Date</text>
+<line x1="340" y1="700" x2="499.8" y2="700" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="347.0" y="715.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+label(): String</text>
+<text x="347.0" y="729.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isCurrent(): boolean</text>
+<text x="347.0" y="743.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+currentSemester(): int</text>
+<text x="347.0" y="757.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isBefore(): boolean</text>
+<rect x="840" y="130" width="216.0" height="150" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="840" y="130" width="216.0" height="36" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="948.0" y="146.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«abstract»</text>
+<text x="948.0" y="159.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="italic" fill="#000">UserAccount</text>
+<text x="847.0" y="181.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-name: String</text>
+<text x="847.0" y="195.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-email: String</text>
+<text x="847.0" y="209.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-password: String</text>
+<text x="847.0" y="223.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-active: boolean</text>
+<line x1="840" y1="230" x2="1056.0" y2="230" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="847.0" y="245.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+authenticate(): boolean</text>
+<text x="847.0" y="259.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+getRole(): Role</text>
+<text x="847.0" y="273.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000" text-decoration="underline">+isInstitutionalEmail(): boolean</text>
+<rect x="600" y="360" width="150.0" height="68" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="600" y="360" width="150.0" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="675.0" y="376.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">AcademicAdministrator</text>
+<line x1="600" y1="406" x2="750.0" y2="406" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="850" y="360" width="191.0" height="82" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="850" y="360" width="191.0" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="945.5" y="376.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">Teacher</text>
+<text x="857.0" y="399.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-department: String</text>
+<line x1="850" y1="406" x2="1041.0" y2="406" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="857.0" y="421.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isAssignedTo(): boolean</text>
+<text x="857.0" y="435.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+canViewProfileOf(): boolean</text>
+<rect x="1150" y="360" width="209.8" height="236" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1150" y="360" width="209.8" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1254.9" y="376.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">Student</text>
+<text x="1157.0" y="399.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-studentNumber: String</text>
+<text x="1157.0" y="413.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-firstEnrolmentYear: int</text>
+<text x="1157.0" y="427.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-entryGrade: int [0..1]</text>
+<text x="1157.0" y="441.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-status: StudentStatus</text>
+<text x="1157.0" y="455.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-/curricularYear: int</text>
+<line x1="1150" y1="462" x2="1359.8" y2="462" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1157.0" y="477.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isActive(): boolean</text>
+<text x="1157.0" y="491.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+changeStatus(): void</text>
+<text x="1157.0" y="505.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-isTransitionAllowed(): boolean</text>
+<text x="1157.0" y="519.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+entryGradeOn20(): Decimal</text>
+<text x="1157.0" y="533.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isTransferred(): boolean</text>
+<text x="1157.0" y="547.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+hasPassedOrCredited(): boolean</text>
+<text x="1157.0" y="561.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+enrolledEcts(): int</text>
+<text x="1157.0" y="575.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+calculateScore(): Decimal</text>
+<text x="1157.0" y="589.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+scoreSource(): ScoreSource</text>
+<rect x="620" y="575" width="153.5" height="96" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="620" y="575" width="153.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="696.8" y="591.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">CourseUnitEnrolment</text>
+<text x="627.0" y="614.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-enrolmentDate: Date</text>
+<text x="627.0" y="628.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-grade: Decimal [0..1]</text>
+<line x1="620" y1="635" x2="773.5" y2="635" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="627.0" y="650.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+recordGrade(): void</text>
+<text x="627.0" y="664.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isPassed(): boolean</text>
+<rect x="1000" y="740" width="150.0" height="82" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1000" y="740" width="150.0" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1075.0" y="756.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">CreditedCourseUnit</text>
+<text x="1007.0" y="779.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-grade: Decimal</text>
+<text x="1007.0" y="793.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-creditDate: Date</text>
+<line x1="1000" y1="800" x2="1150.0" y2="800" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1007.0" y="815.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+correctGrade(): void</text>
+<rect x="1450" y="520" width="228.5" height="166" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1450" y="520" width="228.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1564.2" y="536.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">StudentProfile</text>
+<text x="1457.0" y="559.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-universityAverage: Decimal [0..1]</text>
+<text x="1457.0" y="573.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-totalEctsConsidered: int</text>
+<text x="1457.0" y="587.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-courseUnitsCount: int</text>
+<text x="1457.0" y="601.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-lastUpdated: DateTime</text>
+<line x1="1450" y1="608" x2="1678.5" y2="608" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1457.0" y="623.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+recalculate(): void</text>
+<text x="1457.0" y="637.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+areaScore(): AreaScore</text>
+<text x="1457.0" y="651.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+peerReviewAverages(): Map</text>
+<text x="1457.0" y="665.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+reviewComments(): List&lt;String&gt;</text>
+<text x="1457.0" y="679.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+hasEnoughReviews(): boolean</text>
+<rect x="1760" y="520" width="172.2" height="96" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1760" y="520" width="172.2" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1846.1" y="536.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">AreaScore</text>
+<text x="1767.0" y="559.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-weightedAverage: Decimal</text>
+<text x="1767.0" y="573.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-courseUnitsCount: int</text>
+<text x="1767.0" y="587.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-totalEcts: int</text>
+<line x1="1760" y1="594" x2="1932.2" y2="594" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1767.0" y="609.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+update(): void</text>
+<rect x="600" y="960" width="278.5" height="236" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="600" y="960" width="278.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="739.2" y="976.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">GroupingContext</text>
+<text x="607.0" y="999.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-activityName: String</text>
+<text x="607.0" y="1013.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-targetGroupSize: int</text>
+<text x="607.0" y="1027.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-status: GroupStatus</text>
+<text x="607.0" y="1041.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-classAverage: Decimal [0..1]</text>
+<text x="607.0" y="1055.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-generatedAt: DateTime [0..1]</text>
+<text x="607.0" y="1069.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-activityEndDate: Date [0..1]</text>
+<text x="607.0" y="1083.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-reviewPeriodEnd: Date [0..1]</text>
+<line x1="600" y1="1090" x2="878.5" y2="1090" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="607.0" y="1105.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+eligibleStudents(): List&lt;Student&gt;</text>
+<text x="607.0" y="1119.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+studentsWithoutScoreData(): List&lt;Student&gt;</text>
+<text x="607.0" y="1133.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+generateGroups(): List&lt;Group&gt;</text>
+<text x="607.0" y="1147.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+calculateClassAverage(): Decimal</text>
+<text x="607.0" y="1161.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+publishGroups(): void</text>
+<text x="607.0" y="1175.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isReviewPeriodOpen(): boolean</text>
+<text x="607.0" y="1189.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+groupOf(): Group</text>
+<rect x="960" y="960" width="203.5" height="138" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="960" y="960" width="203.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1061.8" y="976.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">Group</text>
+<text x="967.0" y="999.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-number: int</text>
+<text x="967.0" y="1013.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-averageScore: Decimal</text>
+<line x1="960" y1="1020" x2="1163.5" y2="1020" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="967.0" y="1035.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+addMember(): GroupMembership</text>
+<text x="967.0" y="1049.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+hasMember(): boolean</text>
+<text x="967.0" y="1063.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+otherMembers(): List&lt;Student&gt;</text>
+<text x="967.0" y="1077.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+reviewSummaryFor(): Map</text>
+<text x="967.0" y="1091.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+commentsFor(): List&lt;String&gt;</text>
+<rect x="1260" y="960" width="172.2" height="82" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1260" y="960" width="172.2" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1346.1" y="976.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">GroupMembership</text>
+<text x="1267.0" y="999.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-score: Decimal</text>
+<text x="1267.0" y="1013.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-scoreSource: ScoreSource</text>
+<line x1="1260" y1="1020" x2="1432.2" y2="1020" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1580" y="960" width="159.8" height="110" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1580" y="960" width="159.8" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1659.9" y="976.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">PeerReview</text>
+<text x="1587.0" y="999.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-comment: String [0..1]</text>
+<text x="1587.0" y="1013.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-submittedAt: DateTime</text>
+<line x1="1580" y1="1020" x2="1739.8" y2="1020" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1587.0" y="1035.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+setRating(): void</text>
+<text x="1587.0" y="1049.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+isComplete(): boolean</text>
+<text x="1587.0" y="1063.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+edit(): void</text>
+<rect x="1580" y="1130" width="184.8" height="82" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1580" y="1130" width="184.8" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1672.4" y="1146.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">ReviewRating</text>
+<text x="1587.0" y="1169.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-criterion: ReviewCriterion</text>
+<text x="1587.0" y="1183.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-rating: int</text>
+<line x1="1580" y1="1190" x2="1764.8" y2="1190" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1260" y="1130" width="153.5" height="82" fill="#B9DDF7" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="1260" y="1130" width="153.5" height="24" fill="#A6D2F4" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1336.8" y="1146.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">GroupRating</text>
+<text x="1267.0" y="1169.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-rating: int</text>
+<text x="1267.0" y="1183.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">-submittedAt: DateTime</text>
+<line x1="1260" y1="1190" x2="1413.5" y2="1190" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="1267.0" y="1205.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">+changeRating(): void</text>
+<text x="40.0" y="1280.0" font-size="12" text-anchor="start" font-weight="bold" font-style="normal" fill="#2B5C8A">Enumerations</text>
+<rect x="40" y="1290" width="174.4" height="90" fill="#E2F0FB" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="40" y="1290" width="174.4" height="40" fill="#CFE6F8" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="127.2" y="1306.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«enumeration»</text>
+<text x="127.2" y="1321.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">Role</text>
+<text x="47.0" y="1345.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">STUDENT</text>
+<text x="47.0" y="1359.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">TEACHER</text>
+<text x="47.0" y="1373.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">ACADEMIC_ADMINISTRATOR</text>
+<rect x="236.4" y="1290" width="109.6" height="104" fill="#E2F0FB" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="236.4" y="1290" width="109.6" height="40" fill="#CFE6F8" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="291.2" y="1306.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«enumeration»</text>
+<text x="291.2" y="1321.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">StudentStatus</text>
+<text x="243.4" y="1345.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">ACTIVE</text>
+<text x="243.4" y="1359.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">SUSPENDED</text>
+<text x="243.4" y="1373.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">GRADUATED</text>
+<text x="243.4" y="1387.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">DROPPED_OUT</text>
+<rect x="368.0" y="1290" width="116.8" height="76" fill="#E2F0FB" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="368.0" y="1290" width="116.8" height="40" fill="#CFE6F8" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="426.4" y="1306.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«enumeration»</text>
+<text x="426.4" y="1321.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">CourseUnitType</text>
+<text x="375.0" y="1345.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">MANDATORY</text>
+<text x="375.0" y="1359.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">OPTIONAL</text>
+<rect x="506.8" y="1290" width="109.6" height="90" fill="#E2F0FB" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="506.8" y="1290" width="109.6" height="40" fill="#CFE6F8" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="561.6" y="1306.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«enumeration»</text>
+<text x="561.6" y="1321.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">GroupStatus</text>
+<text x="513.8" y="1345.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">NOT_GENERATED</text>
+<text x="513.8" y="1359.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">PROPOSED</text>
+<text x="513.8" y="1373.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">PUBLISHED</text>
+<rect x="638.4000000000001" y="1290" width="145.6" height="90" fill="#E2F0FB" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="638.4000000000001" y="1290" width="145.6" height="40" fill="#CFE6F8" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="711.2" y="1306.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«enumeration»</text>
+<text x="711.2" y="1321.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">ScoreSource</text>
+<text x="645.4" y="1345.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">AREA_AVERAGE</text>
+<text x="645.4" y="1359.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">UNIVERSITY_AVERAGE</text>
+<text x="645.4" y="1373.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">ENTRY_GRADE</text>
+<rect x="806.0000000000001" y="1290" width="124.0" height="104" fill="#E2F0FB" stroke="#2B5C8A" stroke-width="1.2"/>
+<rect x="806.0000000000001" y="1290" width="124.0" height="40" fill="#CFE6F8" stroke="#2B5C8A" stroke-width="1.2"/>
+<text x="868.0" y="1306.0" font-size="10" text-anchor="middle" font-weight="normal" font-style="italic" fill="#000">«enumeration»</text>
+<text x="868.0" y="1321.0" font-size="12" text-anchor="middle" font-weight="bold" font-style="normal" fill="#000">ReviewCriterion</text>
+<text x="813.0" y="1345.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">COMMITMENT</text>
+<text x="813.0" y="1359.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">KNOWLEDGE</text>
+<text x="813.0" y="1373.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">COMMUNICATION</text>
+<text x="813.0" y="1387.0" font-size="11" text-anchor="start" font-weight="normal" font-style="normal" fill="#000">RELIABILITY</text>
+</svg>
