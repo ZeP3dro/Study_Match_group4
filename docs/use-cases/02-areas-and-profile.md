@@ -17,7 +17,7 @@ Initial knowledge areas:
 ## Profile Calculation Rules
 These rules are referenced by the use cases below.
 
-- **R1 – Best grade:** for each course unit, only the student's best grade is used (attempts and credited grades).
+- **R1 – Best grade:** for each course unit, only the student's best grade is used (grades from enrolments and credited grades).
 - **R2 – Failed course units:** the best grade is used even if it is below 10. A course unit the student never passed still counts with its best grade (e.g. 8 and then 9 → 9 is used).
 - **R3 – Weighted averages:** area averages and the overall university average are ECTS-weighted.
 - **R4 – Course units without area:** count for the overall university average but not for any area average.
@@ -137,11 +137,11 @@ These rules are referenced by the use cases below.
 4. The system saves the updated profile.
 
 **Alternative / exceptional flows:**
-- 3a. A new attempt has a lower grade than a previous one: the profile keeps the best grade (R1).
-- 3b. A grade is corrected to a lower value and it was the best grade: the system uses the next best attempt.
+- 3a. A new grade (e.g. a resit) is lower than the current one: the profile keeps the best grade (R1).
+- 3b. A grade is corrected to a lower value: the system uses the best of the student's remaining grades for that course unit.
 
 **Business rules:**
 - Rules R1–R4 apply.
 - Peer-review results are not maintained here; they are calculated when the profile is viewed (R5).
 
-**Domain concepts revealed:** StudentProfile, AreaScore, Attempt, WeightedAverage, EntryGrade, ECTS
+**Domain concepts revealed:** StudentProfile, AreaScore, CourseUnitEnrolment, WeightedAverage, EntryGrade, ECTS
