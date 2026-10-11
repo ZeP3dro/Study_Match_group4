@@ -2,16 +2,31 @@
 
 Adaptive student group formation — Software Quality Project.
 
-StudyMatch supports the formation of student groups based on academic history
-and competencies. Sprint 1 provides a minimal React frontend that lists
-knowledge areas from a Spring Boot API backed by MySQL.
+StudyMatch is a full-stack application that supports the automatic
+formation of student groups based on their academic history and
+competencies.
 
-## Team
+Team
+Rodrigo Miguel - 51856
+José Pinto - 51989
+Pedro Nobre - 51656
+Hugo Pereira - 51721
 
-- Rodrigo Miguel — 51856
-- José Pinto — 51989
-- Pedro Nobre — 51656
-- Hugo Pereira — 51721
+Tech stack
+Frontend - React
+Backend - Java, Spring Boot
+Database - MySQL, Hibernate
+Build - Maven, Npm
+
+See [docs/tech-stack.md](docs/tech-stack.md) for the justification
+
+Project Status
+Sprint 1 - Project foundation (in progress)
+
+Documentation
+Documentation will be available in the docs/ folder.
+
+Setup
 
 ## Prerequisites
 
@@ -160,11 +175,3 @@ docker compose down
 ```
 
 The MySQL volume is retained, so database data persists between runs.
-
-## Documentation
-
-- [Technology stack](docs/tech-stack.md)
-- [Architecture](docs/architecture.md)
-- [Domain model](docs/domain-model.md)
-- [Use cases](docs/use-cases/README.md)
-- [Team workflow](docs/workflow.md)
