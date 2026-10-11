@@ -77,7 +77,7 @@ Keeping the business rules out of the controllers means they are checked in one 
 ## Communication between frontend and backend
 
 - REST API over HTTP, exchanging JSON.
-- All endpoints start with `/api` (e.g. `GET /api/health`, `GET /api/students`).
+- All endpoints start with `/api`, set as the server context path (e.g. `GET /api/knowledge-areas`).
 - In development, the frontend runs on `http://localhost:5173` and the backend on `http://localhost:8080`. CORS is configured in the backend to allow the frontend origin.
 
 ## Persistence
