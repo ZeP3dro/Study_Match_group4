@@ -1,34 +1,46 @@
-# Study_Match_group4
+# StudyMatch
 
 Adaptive student group formation — Software Quality Project.
 
-StudyMatch is a full-stack application that supports the automatic
-formation of student groups based on their academic history and
-competencies.
+StudyMatch is a full-stack application that supports the automatic formation of student groups based on their academic history and competencies.
 
-Team
-Rodrigo Miguel - 51856
-José Pinto - 51989
-Pedro Nobre - 51656
-Hugo Pereira - 51721
+## Team
 
-Tech stack
-Frontend - React
-Backend - Java, Spring Boot
-Database - MySQL, Hibernate
-Build - Maven, Npm
+| Name | Student number |
+|---|---|
+| Rodrigo Miguel | 51856 |
+| José Pinto | 51989 |
+| Pedro Nobre | 51656 |
+| Hugo Pereira | 51721 |
 
-See [docs/tech-stack.md](docs/tech-stack.md) for the justification
+## Tech Stack
 
-Project Status
-Sprint 1 - Project foundation (in progress)
+- **Frontend:** React (Vite)
+- **Backend:** Java, Spring Boot (REST API)
+- **Database:** MySQL, Spring Data JPA / Hibernate
+- **Build:** Maven, npm
 
-Documentation
-Documentation will be available in the docs/ folder.
+See [docs/tech-stack.md](docs/tech-stack.md) for the justification.
 
-Setup
+## Project Status
 
-## Prerequisites
+Sprint 1 — Project foundation (in progress).
+
+## Documentation
+
+| Document | Description |
+|---|---|
+| [Team workflow](docs/workflow.md) | Issues, branches, Pull Requests and reviews |
+| [Technology stack](docs/tech-stack.md) | Chosen technologies and their justification |
+| [Use-case model](docs/use-cases/README.md) | Actors, use cases and shared business rules |
+| [Domain model](docs/domain-model.md) | Class diagram, constraints and modelling decisions |
+| [Architecture](docs/architecture.md) | Components, layers, persistence and validation |
+| [Coding conventions](docs/coding-conventions.md) | Naming, package structure and code rules |
+| [Definition of Done](docs/definition-of-done.md) | Criteria for a task to be considered done |
+
+## Setup
+
+### Prerequisites
 
 - Git.
 - Java JDK 21, with `JAVA_HOME` pointing to the JDK installation.
@@ -49,19 +61,19 @@ npm --version
 docker compose version
 ```
 
-## Local setup
+### Local setup
 
 The commands below use Windows PowerShell. On Linux or macOS, replace
 `.\mvnw.cmd` with `./mvnw`.
 
-### 1. Clone the repository
+#### 1. Clone the repository
 
 ```powershell
 git clone https://github.com/ZeP3dro/Study_Match_group4.git
 cd Study_Match_group4
 ```
 
-### 2. Start MySQL
+#### 2. Start MySQL
 
 From the repository root:
 
@@ -74,7 +86,7 @@ Wait until `mysqldb` is healthy before starting the backend. MySQL is available
 on `localhost:3308`, with database `studymatch_db`, username `studymatch_user`
 and password `studymatch_password`. These defaults are for local development.
 
-### 3. Start the backend
+#### 3. Start the backend
 
 In a terminal at the repository root:
 
@@ -86,7 +98,7 @@ cd backend
 The API runs at `http://localhost:8080/api`. Hibernate creates or updates the
 tables, and the backend inserts five default knowledge areas if the table is empty.
 
-### 4. Start the frontend
+#### 4. Start the frontend
 
 Open another terminal at the repository root:
 
@@ -99,7 +111,7 @@ npm run dev
 Open `http://localhost:5173`. The page should display the knowledge areas
 returned by the backend.
 
-## Environment variables
+### Environment variables
 
 The default settings work with the included Docker Compose file. No environment
 variables are required for the setup above.
@@ -133,7 +145,7 @@ Changing `DB_PORT` does not change the Docker port mapping: update
 `docker-compose.yml` too if using the included database. Keep the frontend on
 `http://localhost:5173`, which is the origin allowed by the backend CORS configuration.
 
-## Verification and builds
+### Verification and builds
 
 There are no automated tests in this initial skeleton. Check the integration manually:
 
@@ -154,7 +166,7 @@ npm run build
 The backend JAR is generated in `backend/target/`, and the frontend build in
 `frontend/dist/`.
 
-## Troubleshooting
+### Troubleshooting
 
 | Problem | What to check |
 |---|---|
@@ -166,7 +178,7 @@ The backend JAR is generated in `backend/target/`, and the frontend build in
 | The page cannot load the areas | Check the backend endpoint, keep the page on `http://localhost:5173`, and restart Vite after changing its environment variables. |
 | PowerShell blocks npm scripts | Use `npm.cmd ci` and `npm.cmd run dev`. |
 
-## Stop the application
+### Stop the application
 
 Press `Ctrl+C` in the frontend and backend terminals, then run from the repository root:
 
