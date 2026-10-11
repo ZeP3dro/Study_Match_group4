@@ -52,7 +52,7 @@ These rules apply across several use cases and were agreed by the team.
 
 **Grades**
 - Grades range from 0 to 20; a course unit is passed with 10 or more.
-- A student may have several attempts at the same course unit; only the **best grade** counts.
+- If a student goes to a resit or repeats a course unit, only the **best grade** counts.
 - Failed course units also count: if a student never passed a course unit, its best grade (even below 10) is used in the averages (e.g. 8 and then 9 → 9 is used).
 - Only the teacher assigned to a course unit can record its grades.
 - Transferred students keep the grades of the course units the university considers equivalent (credited course units), which count like any other grade.
