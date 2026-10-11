@@ -84,16 +84,15 @@ Issue: #5. Actors and shared rules are described in [README.md](README.md).
 1. The administrator selects a student.
 2. The administrator changes the status (e.g. Active, Suspended, Graduated, Dropped out).
 3. The system validates the change and saves it.
-4. The system records the date of the change.
 
 **Alternative / exceptional flows:**
 - 3a. The change is not allowed (e.g. from Graduated back to Active): the system rejects it.
 
 **Business rules:**
 - Only active students are eligible for group formation.
-- Status changes are recorded with their date.
+- A graduated student cannot go back to Active.
 
-**Domain concepts revealed:** Student, StudentStatus, StatusChange
+**Domain concepts revealed:** Student, StudentStatus
 
 ---
 
@@ -201,29 +200,30 @@ Issue: #5. Actors and shared rules are described in [README.md](README.md).
 
 ### UC09 – Record grade
 
-**Objective:** Register the result of a student's attempt at a course unit, so it becomes part of their academic history.
+**Objective:** Register a student's grade in a course unit, so it becomes part of their academic history.
 
 **Primary actor(s):** Teacher
 
 **Main success scenario:**
 1. The teacher selects a course unit they are assigned to.
 2. The system shows the enrolled students.
-3. The teacher selects the evaluation period (e.g. Regular, Resit, Special).
-4. The teacher enters the grade of one or more students.
-5. The system validates the grades and records the attempts.
-6. The system updates the profiles of the affected students (UC15).
+3. The teacher enters the grade of one or more students.
+4. The system validates the grades and records them in each student's enrolment.
+5. The system updates the profiles of the affected students (UC15).
 
 **Alternative / exceptional flows:**
 - 1a. The teacher is not assigned to the course unit: the system denies access.
-- 5a. A grade is outside the 0–20 scale: the system rejects that grade.
-- 5b. The student already has a grade in the same evaluation period: the system asks the teacher to confirm the correction.
+- 4a. A grade is outside the 0–20 scale: the system rejects that grade.
+- 4b. The student already has a higher grade in this enrolment (e.g. a resit with a lower result): the system keeps the higher grade and informs the teacher.
+- 4c. The teacher is correcting a mistake: after confirmation, the system replaces the grade even if the new one is lower.
 
 **Business rules:**
 - Grades range from 0 to 20; a course unit is passed with 10 or more.
-- A student may have several attempts; only the best grade counts for the profile.
+- Each enrolment keeps only the highest grade obtained (e.g. regular exam or resit).
+- If the student repeats the course unit in another academic year, the best grade of all enrolments counts for the profile.
 - Only the teacher assigned to the course unit can record its grades.
 
-**Domain concepts revealed:** Attempt, Grade, EvaluationPeriod, CourseUnitEnrolment, Teacher
+**Domain concepts revealed:** CourseUnitEnrolment, Grade, Teacher
 
 ---
 
@@ -267,10 +267,9 @@ Issue: #5. Actors and shared rules are described in [README.md](README.md).
 
 **Alternative / exceptional flows:**
 - 2a. The student has no grades yet: the system shows an empty record and the entry grade, if available.
-- 2b. The student selects a course unit: the system shows all attempts at that course unit.
 
 **Business rules:**
 - A student can only see their own academic record.
 - The overall average is ECTS-weighted and uses the best grade of each course unit.
 
-**Domain concepts revealed:** AcademicRecord, Attempt, Grade, ECTS, WeightedAverage
+**Domain concepts revealed:** AcademicRecord, CourseUnitEnrolment, Grade, ECTS, WeightedAverage
