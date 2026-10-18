@@ -28,7 +28,8 @@ public class KnowledgeAreaService {
     @PostConstruct
     public void initData() {
         if (knowledgeAreaRepository.count() == 0) {
-            knowledgeAreaRepository.saveAll(DEFAULT_KNOWLEDGE_AREAS);
+            knowledgeAreaRepository.saveAll(DEFAULT_KNOWLEDGE_AREAS.stream()
+                    .map(area -> new KnowledgeArea(area.getName(), area.getDescription())).toList());
         }
     }
 

@@ -1,38 +1,31 @@
-import { useEffect, useState } from 'react';
-import { getKnowledgeAreas } from './services/api';
-
+import { Navigate, Route, Routes } from 'react-router-dom';
+import RequireRole from './auth/RequireRole';
+import { homePathFor, useAuth } from './auth/AuthContext';
+import Loading from './components/Loading';
+import AppLayout from './layouts/AppLayout';
+import LoginPage from './pages/LoginPage';
+import AccountPage from './pages/AccountPage';
+// Cada Route associa um endereço à página que deve aparecer.
 export default function App() {
-  const [areas, setAreas] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
-
-  useEffect(() => {
-    getKnowledgeAreas()
-      .then(setAreas)
-      .catch(() => setError('Não foi possível carregar as áreas. Confirma se o backend e o MySQL estão a correr.'))
-      .finally(() => setLoading(false));
-  }, []);
-
   return (
-    <main>
-      <h1>StudyMatch</h1>
-      <h2>Áreas de conhecimento</h2>
-      {loading ? (
-        <p>A carregar...</p>
-      ) : error ? (
-        <p role="alert">{error}</p>
-      ) : areas.length === 0 ? (
-        <p>Não existem áreas de conhecimento.</p>
-      ) : (
-        <ul>
-          {areas.map(area => (
-            <li key={area.name}>
-              <strong>{area.name}</strong>
-              <p>{area.description}</p>
-            </li>
-          ))}
-        </ul>
-      )}
-    </main>
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route element={<RequireRole role="STUDENT"><AppLayout /></RequireRole>}>
+        <Route path="/student/account" element={<AccountPage />} />
+      </Route>
+      <Route element={<RequireRole role="ACADEMIC_ADMINISTRATOR"><AppLayout /></RequireRole>}>
+        <Route path="/admin/account" element={<AccountPage />} />
+      </Route>
+      <Route element={<RequireRole role="TEACHER"><AppLayout /></RequireRole>}>
+        <Route path="/account" element={<AccountPage />} />
+      </Route>
+      <Route path="*" element={<HomeRedirect />} />
+    </Routes>
   );
+}
+// Escolhe a página inicial de quem entrou ou envia para o login.
+function HomeRedirect() {
+  const { user, loading } = useAuth();
+  if (loading) return <Loading />;
+  return <Navigate to={user ? homePathFor(user) : '/login'} replace />;
 }

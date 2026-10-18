@@ -3,13 +3,13 @@ services:
     image: mysql:8.0
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: studymatch_db
+      MYSQL_DATABASE: studymatch_revisao_db
       MYSQL_USER: studymatch_user
       MYSQL_PASSWORD: studymatch_password
     ports:
       - "3308:3306"
     volumes:
-      - mysql_data:/var/lib/mysql
+      - mysql_revisao_data:/var/lib/mysql
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--protocol=TCP", "-h", "127.0.0.1", "-u", "root", "-prootpassword"]
       interval: 10s
@@ -17,5 +17,5 @@ services:
       retries: 5
 
 volumes:
-  mysql_data:
+  mysql_revisao_data:
     driver: local

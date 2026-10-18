@@ -2,7 +2,7 @@ spring:
   application:
     name: studymatch-backend
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:${DB_PORT:3308}/studymatch_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    url: ${DB_URL:jdbc:mysql://localhost:${DB_PORT:3308}/studymatch_revisao_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
     username: ${DB_USERNAME:studymatch_user}
     password: ${DB_PASSWORD:studymatch_password}
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -10,8 +10,21 @@ spring:
     open-in-view: false
     hibernate:
       ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 3MB
 
 server:
   port: ${SERVER_PORT:8080}
   servlet:
     context-path: /api
+    session:
+      timeout: 30m
+      cookie:
+        http-only: true
+        same-site: lax
+        secure: ${SESSION_COOKIE_SECURE:false}
+
+studymatch:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
