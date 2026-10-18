@@ -9,11 +9,14 @@ import { ROLE_LABELS, currentAcademicYearLabel, currentSemesterLabel } from '../
 // Cada tipo de utilizador tem as suas opções de menu.
 const NAVIGATION = {
   STUDENT: [
+    { label: 'Áreas de conhecimento', to: '/knowledge-areas' },
     { label: 'A minha conta', to: '/student/account' }
   ],
   ACADEMIC_ADMINISTRATOR: [
     { label: 'Estudantes', to: '/admin/students' },
     { label: 'Docentes', to: '/admin/teachers' },
+    { label: 'Plano de estudos', to: '/admin/study-plan' },
+    { label: 'Áreas de conhecimento', to: '/admin/knowledge-areas' },
     { label: 'A minha conta', to: '/admin/account' }
   ],
   TEACHER: [{ label: 'A minha conta', to: '/account' }]

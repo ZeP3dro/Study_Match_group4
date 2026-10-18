@@ -1,6 +1,8 @@
 package pt.studymatch.service;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.NoSuchElementException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pt.studymatch.domain.AcademicYear;
@@ -16,6 +18,14 @@ public class AcademicYearService {
         this.academicYearRepository = academicYearRepository;
     }
 
+    public List<AcademicYear> findAll() {
+        return academicYearRepository.findAllByOrderByStartDateDesc();
+    }
+
+    public AcademicYear findById(Long id) {
+        return academicYearRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Ano letivo não encontrado."));
+    }
 
     public LocalDate today() {
         return LocalDate.now();

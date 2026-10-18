@@ -6,8 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.util.Objects;
 
+/**
+ * A knowledge area groups course units and represents a competency of the student (UC12).
+ */
 @Entity
 @Table(name = "knowledge_areas")
 public class KnowledgeArea {
@@ -26,12 +28,22 @@ public class KnowledgeArea {
     }
 
     public KnowledgeArea(String name, String description) {
-        this.name = Objects.requireNonNull(name, "Name is required").strip();
-        this.description = Objects.requireNonNull(description, "Description is required").strip();
+        update(name, description);
+    }
 
-        if (this.name.isBlank()) {
-            throw new IllegalArgumentException("Name cannot be blank");
+    public void update(String newName, String newDescription) {
+        if (newName == null || newName.isBlank()) {
+            throw new IllegalArgumentException("O nome da área é obrigatório.");
         }
+        this.name = newName.strip();
+        this.description = newDescription == null ? "" : newDescription.strip();
+    }
+
+    /**
+     * UC12: area names are compared ignoring upper/lower case and leading or trailing spaces.
+     */
+    public boolean hasSameName(String otherName) {
+        return otherName != null && name != null && name.equalsIgnoreCase(otherName.strip());
     }
 
     public Long getId() {
@@ -44,9 +56,5 @@ public class KnowledgeArea {
 
     public String getDescription() {
         return description;
-    }
-
-    public boolean hasSameName(String otherName) {
-        return otherName != null && name != null && name.equalsIgnoreCase(otherName.strip());
     }
 }
