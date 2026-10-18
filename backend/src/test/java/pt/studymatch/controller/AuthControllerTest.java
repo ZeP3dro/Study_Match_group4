@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import pt.studymatch.service.StudentService;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -23,6 +25,9 @@ class AuthControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+
+    @Autowired
+    private StudentService studentService;
 
     @Test
     void signInWithEmailReturnsTheRole() throws Exception {
@@ -64,5 +69,20 @@ class AuthControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
+
+    @Test
+    void onlyAdministratorsCanListStudents() throws Exception {
+        mockMvc.perform(get("/students").session(signIn("34567", "students")))
+                .andExpect(status().isForbidden());
+        mockMvc.perform(get("/students").session(signIn("12345", "admin")))
+                .andExpect(status().isOk());
+    }
+
+    private MockHttpSession signIn(String number, String password) throws Exception {
+        return (MockHttpSession) mockMvc.perform(post("/auth/login").with(csrf()).contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"email\":\"" + number + "\",\"password\":\"" + password + "\"}"))
+                .andExpect(status().isOk())
+                .andReturn().getRequest().getSession();
+    }
 
 }

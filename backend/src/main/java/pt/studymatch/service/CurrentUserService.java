@@ -7,6 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import pt.studymatch.domain.UserAccount;
+import pt.studymatch.enums.Role;
 import pt.studymatch.repository.UserAccountRepository;
 
 @Service
@@ -26,6 +27,16 @@ public class CurrentUserService {
         }
         return userAccountRepository.findByEmailIgnoreCase(authentication.getName())
                 .orElseThrow(() -> new AccessDeniedException("Account not found"));
+    }
+
+        // O aluno só consulta os seus dados; a administração pode consultar todos.
+    public void checkCanViewStudent(Long studentId) {
+        UserAccount account = currentAccount();
+        boolean isAdministrator = account.getRole() == Role.ACADEMIC_ADMINISTRATOR;
+        boolean isTheStudent = account.getRole() == Role.STUDENT && account.getId().equals(studentId);
+        if (!isAdministrator && !isTheStudent) {
+            throw new AccessDeniedException("Not allowed to see this student");
+        }
     }
 
 
