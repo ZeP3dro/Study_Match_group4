@@ -13,6 +13,7 @@ const NAVIGATION = {
   ],
   ACADEMIC_ADMINISTRATOR: [
     { label: 'Estudantes', to: '/admin/students' },
+    { label: 'Docentes', to: '/admin/teachers' },
     { label: 'A minha conta', to: '/admin/account' }
   ],
   TEACHER: [{ label: 'A minha conta', to: '/account' }]
