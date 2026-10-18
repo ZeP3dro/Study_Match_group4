@@ -1,3 +1,24 @@
+/**
+ * Formatting helpers shared by the pages. Numbers use the Portuguese format (16,8).
+ */
+export function formatGrade(value, decimals = 1) {
+  if (value === null || value === undefined) {
+    return '—';
+  }
+  return Number(value).toLocaleString('pt-PT', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  });
+}
+
+/** Shows 17 instead of 17,0, but keeps 16,5. */
+export function formatNumber(value) {
+  if (value === null || value === undefined) {
+    return '—';
+  }
+  return Number(value).toLocaleString('pt-PT', { maximumFractionDigits: 2 });
+}
+
 export function initialsOf(name = '') {
   const parts = name.trim().split(/\s+/).filter(Boolean);
   if (parts.length === 0) return '?';
@@ -22,3 +43,10 @@ export function currentAcademicYearLabel(date = new Date()) {
   const startYear = date.getMonth() + 1 >= 9 ? date.getFullYear() : date.getFullYear() - 1;
   return `${startYear} / ${startYear + 1}`;
 }
+
+export const STATUS_LABELS = {
+  ACTIVE: 'Ativo',
+  SUSPENDED: 'Suspenso',
+  GRADUATED: 'Diplomado',
+  DROPPED_OUT: 'Abandonou'
+};

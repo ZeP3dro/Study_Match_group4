@@ -54,6 +54,6 @@ export function useAuth() {
 // Escolhe o destino do login conforme o tipo de utilizador.
 export function homePathFor(user) {
   if (user.role === 'STUDENT') return '/student/account';
-  if (user.role === 'ACADEMIC_ADMINISTRATOR') return '/admin/account';
+  if (user.role === 'ACADEMIC_ADMINISTRATOR') return '/admin/students';
   return '/account';
 }

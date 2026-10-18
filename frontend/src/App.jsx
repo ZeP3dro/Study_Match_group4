@@ -1,3 +1,6 @@
+import RegisterStudentPage from './pages/admin/RegisterStudentPage';
+import StudentRecordPage from './pages/admin/StudentRecordPage';
+import StudentsPage from './pages/admin/StudentsPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import RequireRole from './auth/RequireRole';
 import { homePathFor, useAuth } from './auth/AuthContext';
@@ -14,6 +17,9 @@ export default function App() {
         <Route path="/student/account" element={<AccountPage />} />
       </Route>
       <Route element={<RequireRole role="ACADEMIC_ADMINISTRATOR"><AppLayout /></RequireRole>}>
+        <Route path="/admin/students" element={<StudentsPage />} />
+        <Route path="/admin/students/new" element={<RegisterStudentPage />} />
+        <Route path="/admin/students/:studentId" element={<StudentRecordPage />} />
         <Route path="/admin/account" element={<AccountPage />} />
       </Route>
       <Route element={<RequireRole role="TEACHER"><AppLayout /></RequireRole>}>
