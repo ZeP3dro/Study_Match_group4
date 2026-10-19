@@ -30,6 +30,11 @@ export default function StudentRecordPage() {
       <PageHeader
         title={`Ficha de ${student.name}`}
         subtitle={`N.º ${student.number}`}
+        actions={
+          <Link className="button" to={`/admin/students/${studentId}/profile`}>
+            Ver perfil académico →
+          </Link>
+        }
       />
       <div className="grid-2">
         <StudentIdentityCard key={studentId} student={student} />

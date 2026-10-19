@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pt.studymatch.domain.AcademicRecord;
 import pt.studymatch.domain.Student;
+import pt.studymatch.domain.StudentProfile;
 import pt.studymatch.repository.CourseUnitEnrolmentRepository;
 import pt.studymatch.repository.KnowledgeAreaRepository;
 
@@ -31,4 +32,7 @@ public class ProfileService {
         return Student.curricularYearFor(recordOf(student).completedEcts());
     }
 
+    public StudentProfile profileOf(Student student) {
+        return StudentProfile.calculate(student, areas.findAll(), recordOf(student));
+    }
 }
