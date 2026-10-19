@@ -22,6 +22,7 @@ export default function AreaDetailPage() {
     <Card title={formatGrade(area.value)}>
       <p>{area.description}</p>
       <p>{area.courseUnitsCount} UC · {area.totalEcts} ECTS</p>
+      <p>{area.source ? SOURCE_LABELS[area.source] : 'Sem dados nesta área'}</p>
     </Card>
   </div>;
 }

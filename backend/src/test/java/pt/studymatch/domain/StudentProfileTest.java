@@ -19,6 +19,15 @@ class StudentProfileTest {
         return DomainFixtures.courseUnit(plan, code, ects, area);
     }
     @Test
+    void entryGradeIsUsedWhenThereAreNoUniversityGrades() {
+        StudentProfile profile = profile(152);
+        assertThat(profile.getAreaScores()).allSatisfy(area -> {
+            assertThat(area.getValue()).isEqualByComparingTo("15.2");
+            assertThat(area.getSource()).isEqualTo(ScoreSource.ENTRY_GRADE);
+        });
+        assertThat(profile.getUniversityAverage()).isNull();
+    }
+    @Test
     void missingDataIsExplicitlyAbsentInsteadOfZero() {
         StudentProfile profile = profile(null);
         assertThat(profile.hasAcademicData()).isFalse();
@@ -26,6 +35,19 @@ class StudentProfileTest {
             assertThat(area.getValue()).isNull();
             assertThat(area.getSource()).isNull();
         });
+    }
+    @ParameterizedTest
+    @ValueSource(ints = {0, 200})
+    void coldStartAcceptsBothEntryGradeBoundaries(int grade) {
+        assertThat(profile(grade).getAreaScores().getFirst().getValue()).isEqualByComparingTo(BigDecimal.valueOf(grade).divide(BigDecimal.TEN));
+    }
+    @Test
+    void firstGradeReplacesEntryGradeAndProvidesFallbackForOtherAreas() {
+        StudentProfile profile = profile(190, DomainFixtures.result(unit("P1", 6, programming), 12));
+        assertThat(profile.getAreaScores().get(0).getValue()).isEqualByComparingTo("12");
+        assertThat(profile.getAreaScores().get(0).getSource()).isEqualTo(ScoreSource.AREA_AVERAGE);
+        assertThat(profile.getAreaScores().get(1).getValue()).isEqualByComparingTo("12");
+        assertThat(profile.getAreaScores().get(1).getSource()).isEqualTo(ScoreSource.UNIVERSITY_AVERAGE);
     }
     @Test
     void eachAreaUsesItsOwnGradesWeightedByEcts() {
@@ -36,6 +58,19 @@ class StudentProfileTest {
         assertThat(profile.getAreaScores().getFirst().getValue()).isEqualByComparingTo("14");
         assertThat(profile.getAreaScores().get(1).getValue()).isEqualByComparingTo("20");
         assertThat(profile.getUniversityAverage()).isEqualByComparingTo("15.5");
+    }
+    @Test
+    void ungradedEnrolmentDoesNotReplaceColdStart() {
+        CourseUnitEnrolment empty = new CourseUnitEnrolment(DomainFixtures.student(null), unit("P1",6,programming), AcademicYear.startingIn(2024), java.time.LocalDate.of(2024,9,1));
+        StudentProfile profile = profile(150, empty);
+        assertThat(profile.courseUnitsCount()).isZero();
+        assertThat(profile.getAreaScores().getFirst().getSource()).isEqualTo(ScoreSource.ENTRY_GRADE);
+    }
+    @Test
+    void gradesWithoutAreaContributeToGlobalAverage() {
+        StudentProfile profile = profile(null, DomainFixtures.result(unit("N1",6,null), 18));
+        assertThat(profile.getUniversityAverage()).isEqualByComparingTo("18");
+        assertThat(profile.getAreaScores()).allSatisfy(area -> assertThat(area.getSource()).isEqualTo(ScoreSource.UNIVERSITY_AVERAGE));
     }
     @Test
     void failedGradeContributesToAverageButNotCompletedEcts() {

@@ -58,7 +58,8 @@ export default function ProfilePage() {
         >
           {!profile.hasAcademicData && (
             <Alert type="warning" title="Ainda não há dados académicos">
-              Ainda não existem resultados académicos para calcular as médias.
+              Sem notas e sem nota de ingresso, não é possível estimar o perfil. Assim que houver
+              uma nota de ingresso ou o primeiro resultado, o perfil é calculado automaticamente.
             </Alert>
           )}
           <div className="area-list">

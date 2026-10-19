@@ -43,7 +43,7 @@ public class StudentProfile {
     }
 
     public boolean hasAcademicData() {
-        return universityAverage != null;
+        return universityAverage != null || entryGradeOn20 != null;
     }
 
     public int courseUnitsCount() {

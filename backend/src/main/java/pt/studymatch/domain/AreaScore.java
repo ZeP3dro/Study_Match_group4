@@ -26,6 +26,12 @@ public class AreaScore {
         if (average != null) {
             value = average;
             source = ScoreSource.AREA_AVERAGE;
+        } else if (universityAverage != null) {
+            value = universityAverage;
+            source = ScoreSource.UNIVERSITY_AVERAGE;
+        } else if (entryGrade != null) {
+            value = entryGrade;
+            source = ScoreSource.ENTRY_GRADE;
         } else {
             value = null;
             source = null;
