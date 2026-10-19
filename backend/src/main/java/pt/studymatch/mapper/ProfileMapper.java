@@ -36,6 +36,7 @@ public class ProfileMapper {
                 areaScore.getSource(),
                 areaScore.getCourseUnitsCount(),
                 areaScore.getTotalEcts());
+        dto.setResults(areaScore.getResults().stream().map(enrolments::toDTO).toList());
         return dto;
     }
 
