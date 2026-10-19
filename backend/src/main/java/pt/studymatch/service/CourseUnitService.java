@@ -6,8 +6,10 @@ import java.util.NoSuchElementException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pt.studymatch.domain.CourseUnit;
+import pt.studymatch.domain.CourseUnitEnrolment;
 import pt.studymatch.domain.StudyPlan;
 import pt.studymatch.enums.CourseUnitType;
+import pt.studymatch.repository.CourseUnitEnrolmentRepository;
 import pt.studymatch.repository.CourseUnitRepository;
 import pt.studymatch.repository.StudyPlanRepository;
 
@@ -40,12 +42,14 @@ public class CourseUnitService {
     private final CourseUnitRepository units;
     private final StudyPlanRepository plans;
     private final KnowledgeAreaService areas;
+    private final CourseUnitEnrolmentRepository enrolments;
 
     public CourseUnitService(CourseUnitRepository units, StudyPlanRepository plans,
-            KnowledgeAreaService areas) {
+            KnowledgeAreaService areas, CourseUnitEnrolmentRepository enrolments) {
         this.units = units;
         this.plans = plans;
         this.areas = areas;
+        this.enrolments = enrolments;
     }
 
     @Transactional(readOnly = true)
@@ -83,6 +87,7 @@ public class CourseUnitService {
         CourseUnit unit = findById(id);
         unit.update(name, ects, curricularYear, semester, type, optionGroup);
         assignArea(unit, knowledgeAreaId);
+        checkExistingEnrolments(unit);
         return unit;
     }
 
@@ -94,6 +99,9 @@ public class CourseUnitService {
 
     public void delete(Long id) {
         CourseUnit unit = findById(id);
+        if (enrolments.existsByCourseUnit(unit)) {
+            throw new IllegalArgumentException("A UC tem inscrições ou notas e não pode ser eliminada.");
+        }
         units.delete(unit);
     }
 
@@ -105,4 +113,20 @@ public class CourseUnitService {
         unit.setKnowledgeArea(knowledgeAreaId == null ? null : areas.findById(knowledgeAreaId));
     }
 
+    /**
+     * Changing the ECTS or the semester must still respect the limits of the existing enrolments.
+     */
+    private void checkExistingEnrolments(CourseUnit unit) {
+        for (CourseUnitEnrolment enrolment : enrolments.findByCourseUnit(unit)) {
+            List<CourseUnitEnrolment> sameYear = enrolments.findByStudentAndAcademicYear(
+                    enrolment.getStudent(), enrolment.getAcademicYear());
+            CourseUnitEnrolment.checkEctsLimits(sameYear, null);
+            for (CourseUnitEnrolment other : sameYear) {
+                boolean isOtherUnit = !other.getCourseUnit().getId().equals(unit.getId());
+                if (isOtherUnit && unit.hasSameOptionGroup(other.getCourseUnit())) {
+                    throw new IllegalArgumentException("Um aluno ficaria inscrito em duas UC do mesmo grupo de opção.");
+                }
+            }
+        }
+    }
 }

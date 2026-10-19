@@ -33,6 +33,11 @@ final class DomainFixtures {
         return withId(new Student("20240001", "Joana Silva", "encoded-password", 2024, entryGrade));
     }
 
+    static CourseUnitEnrolment result(CourseUnit unit, double grade) {
+        CourseUnitEnrolment result = new CourseUnitEnrolment(student(null), unit, AcademicYear.startingIn(2024), java.time.LocalDate.of(2024, 9, 1));
+        result.recordGrade(BigDecimal.valueOf(grade));
+        return result;
+    }
 
     private static <T> T withId(T entity) {
         ReflectionTestUtils.setField(entity, "id", nextId++);
