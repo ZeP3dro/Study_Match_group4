@@ -33,6 +33,12 @@ export const ROLE_LABELS = {
   ACADEMIC_ADMINISTRATOR: 'Administração académica'
 };
 
+export const SOURCE_LABELS = {
+  AREA_AVERAGE: 'Média da área',
+  UNIVERSITY_AVERAGE: 'Estimativa · média global',
+  ENTRY_GRADE: 'Estimativa · nota de ingresso'
+};
+
 /** The 1st semester runs from September to January. */
 export function currentSemesterLabel(date = new Date()) {
   const month = date.getMonth() + 1;

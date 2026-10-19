@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../auth/AuthContext';
 import Alert from '../../components/Alert';
 import Card from '../../components/Card';
 import Field from '../../components/Field';
@@ -6,18 +8,21 @@ import Loading from '../../components/Loading';
 import PageHeader from '../../components/PageHeader';
 import useLoader from '../../hooks/useLoader';
 import { getKnowledgeAreas } from '../../services/knowledgeAreaService';
+import { getProfile } from '../../services/profileService';
+import { formatGrade, SOURCE_LABELS } from '../../utils/format';
 
 export default function KnowledgeAreasPage() {
+  const { user } = useAuth();
   const { data, error, loading } = useLoader(
-    () => getKnowledgeAreas(),
-    []
+    () => Promise.all([getKnowledgeAreas(), getProfile(user.id)]),
+    [user.id]
   );
   const [search, setSearch] = useState('');
   const [openAreaId, setOpenAreaId] = useState(null);
 
   if (loading) return <Loading />;
   if (error) return <Alert type="danger">{error}</Alert>;
-  const areas = data;
+  const [areas, profile] = data;
   const text = search.trim().toLowerCase();
   const visible = areas.filter(
     (area) =>
@@ -43,9 +48,14 @@ export default function KnowledgeAreasPage() {
       </div>
       <div className="area-cards">
         {visible.map((area) => {
+          const score = profile.areas.find((item) => item.areaId === area.id);
           return (
             <Card key={area.id} title={area.name}>
               <p className="small muted">{area.description}</p>
+              <strong>{formatGrade(score?.value)} / 20</strong>
+              <span className="small muted">
+                {score?.source ? SOURCE_LABELS[score.source] : 'Sem dados'}
+              </span>
               <button
                 className="button button--link small"
                 onClick={() => setOpenAreaId(openAreaId === area.id ? null : area.id)}
@@ -61,6 +71,7 @@ export default function KnowledgeAreasPage() {
                   ))}
                 </ul>
               )}
+              <Link to={`/profile/areas/${area.id}`}>Ver detalhe da área →</Link>
             </Card>
           );
         })}

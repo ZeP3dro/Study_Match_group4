@@ -9,6 +9,7 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
+import pt.studymatch.repository.UserAccountRepository;
 import pt.studymatch.service.StudentService;
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -25,6 +26,8 @@ class AuthControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @Autowired
+    private UserAccountRepository userAccountRepository;
 
     @Autowired
     private StudentService studentService;
@@ -69,6 +72,18 @@ class AuthControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
+    @Test
+    void studentSeesOwnProfileButNotTheProfileOfOthers() throws Exception {
+        MockHttpSession session = signIn("34567", "students");
+        Long studentId = idOf("34567");
+        Long otherStudentId = studentService.register("Outro estudante de teste", 2026, null).getStudent().getId();
+
+        mockMvc.perform(get("/students/" + studentId + "/profile").session(session))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.areas[0].name").value("Programação"));
+        mockMvc.perform(get("/students/" + otherStudentId + "/profile").session(session))
+                .andExpect(status().isForbidden());
+    }
 
     @Test
     void onlyAdministratorsCanListStudents() throws Exception {
@@ -85,4 +100,7 @@ class AuthControllerTest {
                 .andReturn().getRequest().getSession();
     }
 
+    private Long idOf(String number) {
+        return userAccountRepository.findByEmailIgnoreCase(number + "@studymatch.com").orElseThrow().getId();
+    }
 }
