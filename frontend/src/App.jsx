@@ -1,3 +1,4 @@
+import AcademicPathPage from './pages/student/AcademicPathPage';
 import KnowledgeAreasAdminPage from './pages/admin/KnowledgeAreasAdminPage';
 import KnowledgeAreasPage from './pages/student/KnowledgeAreasPage';
 import RegisterStudentPage from './pages/admin/RegisterStudentPage';
@@ -19,6 +20,7 @@ export default function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route element={<RequireRole role="STUDENT"><AppLayout /></RequireRole>}>
         <Route path="/knowledge-areas" element={<KnowledgeAreasPage />} />
+        <Route path="/academic-path" element={<AcademicPathPage />} />
         <Route path="/student/account" element={<AccountPage />} />
       </Route>
       <Route element={<RequireRole role="ACADEMIC_ADMINISTRATOR"><AppLayout /></RequireRole>}>

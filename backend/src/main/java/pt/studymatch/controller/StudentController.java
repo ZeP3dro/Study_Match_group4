@@ -19,6 +19,7 @@ import pt.studymatch.dto.StudentDTO;
 import pt.studymatch.dto.StudentRequestDTO;
 import pt.studymatch.mapper.AccountMapper;
 import pt.studymatch.service.CurrentUserService;
+import pt.studymatch.service.ProfileService;
 import pt.studymatch.service.StudentService;
 import pt.studymatch.service.StudentService.RegisteredStudent;
 
@@ -27,11 +28,13 @@ import pt.studymatch.service.StudentService.RegisteredStudent;
 public class StudentController {
 
     private final StudentService students;
+    private final ProfileService profiles;
     private final CurrentUserService currentUser;
     private final AccountMapper mapper;
 
-    public StudentController(StudentService students, CurrentUserService currentUser, AccountMapper mapper) {
+    public StudentController(StudentService students, ProfileService profiles, CurrentUserService currentUser, AccountMapper mapper) {
         this.students = students;
+        this.profiles = profiles;
         this.currentUser = currentUser;
         this.mapper = mapper;
     }
@@ -72,6 +75,6 @@ public class StudentController {
     }
 
     private StudentDTO toDTO(Student student) {
-        return mapper.toDTO(student, Student.curricularYearFor(0), false);
+        return mapper.toDTO(student, profiles.curricularYearOf(student), false);
     }
 }

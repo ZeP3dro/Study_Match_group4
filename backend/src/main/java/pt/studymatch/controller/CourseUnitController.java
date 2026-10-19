@@ -20,6 +20,7 @@ import pt.studymatch.dto.CourseUnitRequestDTO;
 import pt.studymatch.dto.KnowledgeAreaAssignmentDTO;
 import pt.studymatch.dto.StudyPlanDTO;
 import pt.studymatch.mapper.CourseUnitMapper;
+import pt.studymatch.mapper.EnrolmentMapper;
 import pt.studymatch.service.AcademicYearService;
 import pt.studymatch.service.CourseUnitService;
 
@@ -28,11 +29,14 @@ public class CourseUnitController {
     private final CourseUnitService units;
     private final AcademicYearService years;
     private final CourseUnitMapper unitMapper;
+    private final EnrolmentMapper enrolmentMapper;
 
-    public CourseUnitController(CourseUnitService units, AcademicYearService years, CourseUnitMapper unitMapper) {
+    public CourseUnitController(CourseUnitService units, AcademicYearService years, CourseUnitMapper unitMapper,
+            EnrolmentMapper enrolmentMapper) {
         this.units = units;
         this.years = years;
         this.unitMapper = unitMapper;
+        this.enrolmentMapper = enrolmentMapper;
     }
 
     @GetMapping("/course-units")
@@ -43,7 +47,7 @@ public class CourseUnitController {
     @GetMapping("/academic-years")
     public List<AcademicYearDTO> years() {
         AcademicYear current = years.current();
-        return years.findAll().stream().map(year -> new AcademicYearDTO(year.getId(), year.label(), year.getId().equals(current.getId()))).toList();
+        return years.findAll().stream().map(year -> enrolmentMapper.toDTO(year, current)).toList();
     }
 
     @GetMapping("/study-plan")

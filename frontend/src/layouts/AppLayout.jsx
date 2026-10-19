@@ -10,6 +10,7 @@ import { ROLE_LABELS, currentAcademicYearLabel, currentSemesterLabel } from '../
 const NAVIGATION = {
   STUDENT: [
     { label: 'Áreas de conhecimento', to: '/knowledge-areas' },
+    { label: 'Percurso académico', to: '/academic-path' },
     { label: 'A minha conta', to: '/student/account' }
   ],
   ACADEMIC_ADMINISTRATOR: [
