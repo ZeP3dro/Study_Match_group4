@@ -1,6 +1,9 @@
+import KnowledgeAreasAdminPage from './pages/admin/KnowledgeAreasAdminPage';
+import KnowledgeAreasPage from './pages/student/KnowledgeAreasPage';
 import RegisterStudentPage from './pages/admin/RegisterStudentPage';
 import StudentRecordPage from './pages/admin/StudentRecordPage';
 import StudentsPage from './pages/admin/StudentsPage';
+import StudyPlanPage from './pages/admin/StudyPlanPage';
 import TeachersPage from './pages/admin/TeachersPage';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import RequireRole from './auth/RequireRole';
@@ -15,6 +18,7 @@ export default function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route element={<RequireRole role="STUDENT"><AppLayout /></RequireRole>}>
+        <Route path="/knowledge-areas" element={<KnowledgeAreasPage />} />
         <Route path="/student/account" element={<AccountPage />} />
       </Route>
       <Route element={<RequireRole role="ACADEMIC_ADMINISTRATOR"><AppLayout /></RequireRole>}>
@@ -22,6 +26,8 @@ export default function App() {
         <Route path="/admin/students/new" element={<RegisterStudentPage />} />
         <Route path="/admin/students/:studentId" element={<StudentRecordPage />} />
         <Route path="/admin/teachers" element={<TeachersPage />} />
+        <Route path="/admin/study-plan" element={<StudyPlanPage />} />
+        <Route path="/admin/knowledge-areas" element={<KnowledgeAreasAdminPage />} />
         <Route path="/admin/account" element={<AccountPage />} />
       </Route>
       <Route element={<RequireRole role="TEACHER"><AppLayout /></RequireRole>}>
