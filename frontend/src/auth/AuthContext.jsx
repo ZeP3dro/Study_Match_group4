@@ -39,7 +39,8 @@ export function AuthProvider({ children }) {
         user,
         loading,
         login,
-        logout
+        logout,
+        clearUser: () => setUser(null),
       }}
     >
       {children}

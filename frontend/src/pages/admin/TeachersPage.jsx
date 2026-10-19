@@ -1,3 +1,4 @@
+import AccountStateForm from '../../components/AccountStateForm';
 import { useState } from 'react';
 import Alert from '../../components/Alert';
 import Card from '../../components/Card';
@@ -95,6 +96,11 @@ export default function TeachersPage() {
               <span>N.º {teacher.number}</span>
               <span>{teacher.email}</span>
               <span className="small muted">{teacher.department}</span>
+              <AccountStateForm
+                key={`${teacher.id}-${teacher.active}`}
+                account={teacher}
+                onChange={reload}
+              />
               <span className="badge">{teacher.active ? 'Conta ativa' : 'Conta inativa'}</span>
               <div className="form-actions">
                 <button

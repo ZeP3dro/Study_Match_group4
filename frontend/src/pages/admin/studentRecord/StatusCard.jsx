@@ -1,3 +1,4 @@
+import AccountStateForm from '../../../components/AccountStateForm';
 import { useState } from 'react';
 import Alert from '../../../components/Alert';
 import Card from '../../../components/Card';
@@ -55,6 +56,8 @@ export default function StatusCard({ student, onChange }) {
           </button>
         </div>
       </form>
+      <hr className="divider" />
+      <AccountStateForm key={String(student.active)} account={student} onChange={onChange} />
     </Card>
   );
 }
