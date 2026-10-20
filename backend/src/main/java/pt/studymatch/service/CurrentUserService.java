@@ -39,6 +39,21 @@ public class CurrentUserService {
         }
     }
 
+    // Só o dono da conta pode alterar a fotografia.
+    public void checkCanEditPhoto(Long accountId) {
+        UserAccount account = currentAccount();
+        if (!account.getId().equals(accountId)) {
+            throw new AccessDeniedException("Não podes aceder à fotografia deste utilizador.");
+        }
+    }
+
+    // A fotografia pode ser consultada pelo dono ou pela administração.
+    public void checkCanViewPhoto(Long accountId) {
+        UserAccount account = currentAccount();
+        if (account.getRole() != Role.ACADEMIC_ADMINISTRATOR && !account.getId().equals(accountId)) {
+            throw new AccessDeniedException("Não podes consultar esta fotografia.");
+        }
+    }
 
     public boolean isSessionValid(Authentication authentication,
             HttpServletRequest request) {

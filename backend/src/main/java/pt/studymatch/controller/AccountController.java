@@ -11,15 +11,18 @@ import pt.studymatch.dto.AccountDTO;
 import pt.studymatch.dto.AccountStateDTO;
 import pt.studymatch.mapper.AccountMapper;
 import pt.studymatch.service.AccountService;
+import pt.studymatch.service.PhotoService;
 
 @RestController
 public class AccountController {
 
     private final AccountService accounts;
+    private final PhotoService photos;
     private final AccountMapper mapper;
 
-    public AccountController(AccountService accounts, AccountMapper mapper) {
+    public AccountController(AccountService accounts, PhotoService photos, AccountMapper mapper) {
         this.accounts = accounts;
+        this.photos = photos;
         this.mapper = mapper;
     }
 
@@ -27,6 +30,6 @@ public class AccountController {
     @PreAuthorize(AccessRules.ADMINISTRATOR_ONLY)
     public AccountDTO changeState(@PathVariable Long id, @Valid @RequestBody AccountStateDTO request) {
         UserAccount account = accounts.changeState(id, request.getActive());
-        return mapper.toDTO(account, false);
+        return mapper.toDTO(account, photos.hasPhoto(account.getId()));
     }
 }

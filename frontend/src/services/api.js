@@ -8,7 +8,7 @@ export class ApiError extends Error {
   }
 }
 
-async function request(path, { method = 'GET', body } = {}) {
+async function request(path, { method = 'GET', body, isFile = false } = {}) {
   const options = {
     method,
     // Envia o cookie que identifica a sessão.
@@ -21,8 +21,12 @@ async function request(path, { method = 'GET', body } = {}) {
     options.headers[csrf.headerName] = csrf.token;
   }
   if (body !== undefined) {
-    options.headers['Content-Type'] = 'application/json';
-    options.body = JSON.stringify(body);
+    if (isFile) {
+      options.body = body;
+    } else {
+      options.headers['Content-Type'] = 'application/json';
+      options.body = JSON.stringify(body);
+    }
   }
 
   let response;
@@ -62,8 +66,13 @@ export const api = {
   get: (path) => request(path),
   post: (path, body) => request(path, { method: 'POST', body }),
   put: (path, body) => request(path, { method: 'PUT', body }),
-  delete: (path) => request(path, { method: 'DELETE' })
+  delete: (path) => request(path, { method: 'DELETE' }),
+  upload: (path, formData) => request(path, { method: 'PUT', body: formData, isFile: true })
 };
+
+export function photoUrl(accountId, version = 0) {
+  return `${API_BASE_URL}/users/${accountId}/photo?v=${version}`;
+}
 
 export function toQuery(params) {
   const query = new URLSearchParams();

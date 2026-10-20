@@ -17,6 +17,7 @@ import pt.studymatch.domain.Teacher;
 import pt.studymatch.dto.AccountDTO;
 import pt.studymatch.dto.TeacherRequestDTO;
 import pt.studymatch.mapper.AccountMapper;
+import pt.studymatch.service.PhotoService;
 import pt.studymatch.service.TeacherService;
 import pt.studymatch.service.TeacherService.RegisteredTeacher;
 
@@ -27,10 +28,12 @@ import pt.studymatch.service.TeacherService.RegisteredTeacher;
 public class TeacherController {
 
     private final TeacherService teachers;
+    private final PhotoService photos;
     private final AccountMapper mapper;
 
-    public TeacherController(TeacherService teachers, AccountMapper mapper) {
+    public TeacherController(TeacherService teachers, PhotoService photos, AccountMapper mapper) {
         this.teachers = teachers;
+        this.photos = photos;
         this.mapper = mapper;
     }
 
@@ -55,6 +58,6 @@ public class TeacherController {
     }
 
     private AccountDTO toDTO(Teacher teacher) {
-        return mapper.toDTO(teacher, false);
+        return mapper.toDTO(teacher, photos.hasPhoto(teacher.getId()));
     }
 }

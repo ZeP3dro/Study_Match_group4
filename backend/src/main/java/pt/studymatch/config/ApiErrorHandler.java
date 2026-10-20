@@ -15,6 +15,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import pt.studymatch.dto.ErrorDTO;
 
 @RestControllerAdvice
@@ -65,6 +66,10 @@ public class ApiErrorHandler {
         return response(HttpStatus.FORBIDDEN, "Não tens permissão para ver ou alterar estes dados.", Map.of());
     }
 
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public ResponseEntity<ErrorDTO> handleFileTooLarge(MaxUploadSizeExceededException exception) {
+        return response(HttpStatus.BAD_REQUEST, "A foto não pode ter mais de 2 MB.", Map.of());
+    }
 
     private static ResponseEntity<ErrorDTO> response(HttpStatus status, String message, Map<String, String> fields) {
         return ResponseEntity.status(status).body(new ErrorDTO(message, fields));
