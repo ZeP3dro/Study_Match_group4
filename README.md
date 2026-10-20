@@ -33,6 +33,7 @@ Sprint 2 integrates account access, student and teacher management, study-plan m
 - [Use cases and implementation scope](docs/use-cases/README.md)
 - [Domain model](docs/domain-model.md)
 - [Architecture](docs/architecture.md)
+- [Design decisions](docs/design-decisions.md)
 - [Coding conventions](docs/coding-conventions.md)
 - [Definition of Done](docs/definition-of-done.md)
 

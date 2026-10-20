@@ -83,3 +83,12 @@ For a grouping context in a course unit of area X, each student's score is calcu
 - Groups are formed automatically by the system.
 - Groups are balanced: each group's average score should be as close as possible to the class average score.
 - Only active students enrolled in the course unit in the current academic year are included.
+
+## Sprint 2 implementation scope
+The use cases above describe the whole product. Sprint 2 implements UC01–UC06, UC08, UC09, UC11–UC16 (with the adjustments below); UC07, UC10 and UC17–UC22 remain future work. The decisions taken are explained in [design-decisions.md](../design-decisions.md).
+
+- Student and teacher numbers are generated automatically, and the email is `number@studymatch.com`.
+- Grades are recorded and corrected by the academic administrator, because teaching assignments (UC07) are not implemented yet.
+- Credited course units (UC10) are not implemented.
+- UC14: an area without grades uses the university average, then the entry grade ÷ 10. "No data" is shown only when there are no grades and no entry grade.
+- The rule "only course units completed before the current semester" applies to the future group-formation score, not to the profile.
