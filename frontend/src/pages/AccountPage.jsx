@@ -1,3 +1,4 @@
+import PasswordForm from '../components/PasswordForm';
 import { useAuth } from '../auth/AuthContext';
 import Card from '../components/Card';
 import PageHeader from '../components/PageHeader';
@@ -8,13 +9,14 @@ export default function AccountPage() {
     <div className="page">
       <PageHeader
         title="A minha conta"
-        subtitle="Consulta os dados da tua conta."
+        subtitle="Consulta os dados e altera a palavra-passe da conta."
       />
       <Card title={ROLE_LABELS[user.role]}>
         <h3>{user.name}</h3>
         <span>N.º {user.number}</span>
         <span>{user.email}</span>
       </Card>
+      <PasswordForm />
     </div>
   );
 }

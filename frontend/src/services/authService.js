@@ -5,3 +5,5 @@ export const signIn = (email, password) => api.post('/auth/login', { email, pass
 export const signOut = () => api.post('/auth/logout');
 
 export const getCurrentUser = () => api.get('/auth/me');
+
+export const changePassword = (form) => api.put('/auth/password', form);

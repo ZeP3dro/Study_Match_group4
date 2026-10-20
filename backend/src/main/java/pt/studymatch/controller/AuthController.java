@@ -16,6 +16,7 @@ import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.security.web.csrf.HttpSessionCsrfTokenRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +24,9 @@ import pt.studymatch.domain.UserAccount;
 import pt.studymatch.dto.AccountDTO;
 import pt.studymatch.dto.CsrfTokenDTO;
 import pt.studymatch.dto.LoginDTO;
+import pt.studymatch.dto.PasswordChangeDTO;
 import pt.studymatch.mapper.AccountMapper;
+import pt.studymatch.service.AccountService;
 import pt.studymatch.service.CurrentUserService;
 
 @RestController
@@ -33,14 +36,16 @@ public class AuthController {
     private final AuthenticationManager authenticationManager;
     private final SecurityContextRepository securityContextRepository;
     private final CurrentUserService currentUserService;
+    private final AccountService accountService;
     private final AccountMapper accountMapper;
 
     public AuthController(AuthenticationManager authenticationManager,
             SecurityContextRepository securityContextRepository, CurrentUserService currentUserService,
-            AccountMapper accountMapper) {
+            AccountService accountService, AccountMapper accountMapper) {
         this.authenticationManager = authenticationManager;
         this.securityContextRepository = securityContextRepository;
         this.currentUserService = currentUserService;
+        this.accountService = accountService;
         this.accountMapper = accountMapper;
     }
 
@@ -93,6 +98,14 @@ public class AuthController {
         return toDTO(currentUserService.currentAccount());
     }
 
+    @PutMapping("/password")
+    public ResponseEntity<Void> changePassword(@RequestBody PasswordChangeDTO request,
+            HttpServletRequest httpRequest) {
+        accountService.changePassword(request.getCurrentPassword(), request.getNewPassword(),
+                request.getConfirmation());
+        logout(httpRequest);
+        return ResponseEntity.noContent().build();
+    }
 
     private AccountDTO toDTO(UserAccount account) {
         return accountMapper.toDTO(account, false);
