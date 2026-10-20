@@ -5,6 +5,7 @@ import Card from '../../components/Card';
 import Field from '../../components/Field';
 import Loading from '../../components/Loading';
 import PageHeader from '../../components/PageHeader';
+import PhotoEditor from '../../components/PhotoEditor';
 import TeacherForm from './TeacherForm';
 import useLoader from '../../hooks/useLoader';
 import { searchTeachers } from '../../services/teacherService';
@@ -92,8 +93,7 @@ export default function TeachersPage() {
         <div className="stack">
           {data?.map((teacher) => (
             <Card key={teacher.id}>
-              <h3>{teacher.name}</h3>
-              <span>N.º {teacher.number}</span>
+              <PhotoEditor account={teacher} />
               <span>{teacher.email}</span>
               <span className="small muted">{teacher.department}</span>
               <AccountStateForm

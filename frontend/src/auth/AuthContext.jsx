@@ -41,6 +41,7 @@ export function AuthProvider({ children }) {
         login,
         logout,
         clearUser: () => setUser(null),
+        refreshUser: () => getCurrentUser().then(setUser)
       }}
     >
       {children}

@@ -66,6 +66,9 @@ export default function AppLayout() {
           <span>{currentAcademicYearLabel()}</span>
           <div className="sidebar__user">
             <Avatar
+              accountId={user.id}
+              hasPhoto={user.hasPhoto}
+              photoVersion={Date.now()}
               name={user.name}
             />
             <div>
@@ -85,6 +88,9 @@ export default function AppLayout() {
           <div className="topbar__right">
             <span className="pill">{currentSemesterLabel()}</span>
             <Avatar
+              accountId={user.id}
+              hasPhoto={user.hasPhoto}
+              photoVersion={Date.now()}
               name={user.name}
               size={32}
             />

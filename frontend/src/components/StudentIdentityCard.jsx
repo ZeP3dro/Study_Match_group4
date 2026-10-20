@@ -1,11 +1,11 @@
 import { STATUS_LABELS } from '../utils/format';
 import Card from './Card';
+import PhotoEditor from './PhotoEditor';
 import { formatGrade } from '../utils/format';
 export default function StudentIdentityCard({ student, showContactNote }) {
   return (
     <Card>
-      <h3>{student.name}</h3>
-      <span>N.º {student.number}</span>
+      <PhotoEditor key={student.id} account={student} />
       <hr className="divider" />
       <div className="detail-list">
         <span>{student.email}</span>

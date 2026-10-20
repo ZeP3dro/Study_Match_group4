@@ -28,6 +28,7 @@ import pt.studymatch.dto.PasswordChangeDTO;
 import pt.studymatch.mapper.AccountMapper;
 import pt.studymatch.service.AccountService;
 import pt.studymatch.service.CurrentUserService;
+import pt.studymatch.service.PhotoService;
 
 @RestController
 @RequestMapping("/auth")
@@ -37,15 +38,17 @@ public class AuthController {
     private final SecurityContextRepository securityContextRepository;
     private final CurrentUserService currentUserService;
     private final AccountService accountService;
+    private final PhotoService photoService;
     private final AccountMapper accountMapper;
 
     public AuthController(AuthenticationManager authenticationManager,
             SecurityContextRepository securityContextRepository, CurrentUserService currentUserService,
-            AccountService accountService, AccountMapper accountMapper) {
+            AccountService accountService, PhotoService photoService, AccountMapper accountMapper) {
         this.authenticationManager = authenticationManager;
         this.securityContextRepository = securityContextRepository;
         this.currentUserService = currentUserService;
         this.accountService = accountService;
+        this.photoService = photoService;
         this.accountMapper = accountMapper;
     }
 
@@ -108,6 +111,6 @@ public class AuthController {
     }
 
     private AccountDTO toDTO(UserAccount account) {
-        return accountMapper.toDTO(account, false);
+        return accountMapper.toDTO(account, photoService.hasPhoto(account.getId()));
     }
 }
