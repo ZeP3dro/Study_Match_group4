@@ -22,168 +22,103 @@ StudyMatch is a full-stack application that supports the automatic formation of 
 
 See [docs/tech-stack.md](docs/tech-stack.md) for the justification.
 
-## Project Status
+## Project status
 
-Sprint 1 — Project foundation (in progress).
+Sprint 2 integrates account access, student and teacher management, study-plan management, academic results, student profiles and cold start. Group formation and teacher assignment to course units remain outside this implementation.
 
 ## Documentation
 
-| Document | Description |
-|---|---|
-| [Team workflow](docs/workflow.md) | Issues, branches, Pull Requests and reviews |
-| [Technology stack](docs/tech-stack.md) | Chosen technologies and their justification |
-| [Use-case model](docs/use-cases/README.md) | Actors, use cases and shared business rules |
-| [Domain model](docs/domain-model.md) | Class diagram, constraints and modelling decisions |
-| [Architecture](docs/architecture.md) | Components, layers, persistence and validation |
-| [Coding conventions](docs/coding-conventions.md) | Naming, package structure and code rules |
-| [Definition of Done](docs/definition-of-done.md) | Criteria for a task to be considered done |
+- [Workflow](docs/workflow.md)
+- [Technology stack](docs/tech-stack.md)
+- [Use cases and implementation scope](docs/use-cases/README.md)
+- [Domain model](docs/domain-model.md)
+- [Architecture](docs/architecture.md)
+- [Coding conventions](docs/coding-conventions.md)
+- [Definition of Done](docs/definition-of-done.md)
 
-## Setup
+## Requirements
 
-### Prerequisites
+Git, JDK 21 with a valid JAVA_HOME, Node.js with npm, Docker Desktop with Compose, and network access for the initial dependency downloads. The Maven wrapper is included. On Windows, use npm.cmd if PowerShell blocks npm.ps1.
 
-- Git.
-- Java JDK 21, with `JAVA_HOME` pointing to the JDK installation.
-- Node.js 22 or 24, with npm.
-- Docker Desktop running with Linux containers and Docker Compose v2.
-- Internet access to download dependencies and the MySQL image on the first run.
+## Start the application
 
-Maven is downloaded by the included wrapper. npm installs the frontend
-dependencies. MySQL runs in Docker, so a separate MySQL installation is unnecessary.
-
-Check the installed tools:
-
-```powershell
-git --version
-java -version
-node --version
-npm --version
-docker compose version
-```
-
-### Local setup
-
-The commands below use Windows PowerShell. On Linux or macOS, replace
-`.\mvnw.cmd` with `./mvnw`.
-
-#### 1. Clone the repository
-
-```powershell
-git clone https://github.com/ZeP3dro/Study_Match_group4.git
-cd Study_Match_group4
-```
-
-#### 2. Start MySQL
-
-From the repository root:
+From the repository root, start MySQL:
 
 ```powershell
 docker compose up -d
 docker compose ps
 ```
 
-Wait until `mysqldb` is healthy before starting the backend. MySQL is available
-on `localhost:3308`, with database `studymatch_db`, username `studymatch_user`
-and password `studymatch_password`. These defaults are for local development.
+Wait for mysqldb to become healthy. The included configuration uses port 3308, database studymatch_revisao_db and the mysql_revisao_data volume. Local development credentials are configured in docker-compose.yml. Do not remove an existing volume to perform an ordinary restart.
 
-#### 3. Start the backend
-
-In a terminal at the repository root:
+In a separate terminal, start the backend:
 
 ```powershell
 cd backend
 .\mvnw.cmd spring-boot:run
 ```
 
-The API runs at `http://localhost:8080/api`. Hibernate creates or updates the
-tables, and the backend inserts five default knowledge areas if the table is empty.
-
-#### 4. Start the frontend
-
-Open another terminal at the repository root:
+In another terminal, start the frontend:
 
 ```powershell
 cd frontend
-npm ci
-npm run dev
+npm.cmd ci
+npm.cmd run dev
 ```
 
-Open `http://localhost:5173`. The page should display the knowledge areas
-returned by the backend.
+Open http://localhost:5173. The backend is available at http://localhost:8080/api. The study plan and three default accounts are initialized; sample academic histories are not automatically created. Existing account passwords are not reset on startup.
 
-### Environment variables
-
-The default settings work with the included Docker Compose file. No environment
-variables are required for the setup above.
-
-| Variable | Default | Purpose |
+| Role | Number | Initial local password |
 |---|---|---|
-| `DB_PORT` | `3308` | MySQL port used by the backend. |
-| `DB_URL` | MySQL JDBC URL for `localhost:3308/studymatch_db` | Overrides the complete database URL, including the port. |
-| `DB_USERNAME` | `studymatch_user` | Database username. |
-| `DB_PASSWORD` | `studymatch_password` | Database password. |
-| `SERVER_PORT` | `8080` | Backend HTTP port. |
-| `VITE_API_URL` | `http://localhost:8080/api` | Backend URL used by the frontend. |
+| Academic administrator | 12345 | admin |
+| Teacher | 23456 | teacher |
+| Student | 34567 | students |
 
-Set backend variables in the terminal before running Maven. For example, to use
-a different backend port:
+Sign in with the number or number@studymatch.com. Newly registered students and teachers share a persistent sequence starting at 1; their generated initial password is returned only at registration. Treat these default credentials as development data, not deployment credentials.
 
-```powershell
-$env:SERVER_PORT = "8081"
-.\mvnw.cmd spring-boot:run
-```
+## Tests and builds
 
-In `frontend/.env.local`, set the matching frontend URL and restart Vite:
-
-```dotenv
-VITE_API_URL=http://localhost:8081/api
-```
-
-On Linux or macOS, use `export SERVER_PORT=8081` instead. The backend reads
-system environment variables; it does not automatically load a `.env` file.
-Changing `DB_PORT` does not change the Docker port mapping: update
-`docker-compose.yml` too if using the included database. Keep the frontend on
-`http://localhost:5173`, which is the origin allowed by the backend CORS configuration.
-
-### Verification and builds
-
-There are no automated tests in this initial skeleton. Check the integration manually:
-
-1. Open `http://localhost:8080/api/knowledge-areas`; expect a JSON list with five areas on a fresh database.
-2. Open `http://localhost:5173`; expect the same names and descriptions on the page.
-3. Restart the backend and confirm that the list is still available from MySQL.
-
-Check that both applications build:
+From backend:
 
 ```powershell
-# From backend/
+.\mvnw.cmd clean test
 .\mvnw.cmd clean package
-
-# From frontend/, after npm ci
-npm run build
 ```
 
-The backend JAR is generated in `backend/target/`, and the frontend build in
-`frontend/dist/`.
+Spring integration tests activate the `test` profile and load `backend/src/test/resources/application-test.yml`, which uses an in-memory H2 database and does not require MySQL. The normal `spring-boot:run` command uses the default profile and MySQL settings from `backend/src/main/resources/application.yml`. A successful H2 test run does not substitute for checking the normal MySQL configuration.
 
-### Troubleshooting
-
-| Problem | What to check |
-|---|---|
-| Docker cannot connect to its engine | Start Docker Desktop and wait until the engine is running. |
-| MySQL is not healthy | Run `docker compose logs mysqldb` from the repository root. |
-| Backend cannot connect to MySQL | Confirm the container is healthy and the database port and credentials match the backend settings. |
-| Java compilation fails | Confirm `java -version` and `.\mvnw.cmd -version` use JDK 21; check `JAVA_HOME`. |
-| A port is already in use | Stop the other process. For backend port changes, update `SERVER_PORT` and `VITE_API_URL` together. For MySQL, update the Compose port mapping and `DB_PORT`. |
-| The page cannot load the areas | Check the backend endpoint, keep the page on `http://localhost:5173`, and restart Vite after changing its environment variables. |
-| PowerShell blocks npm scripts | Use `npm.cmd ci` and `npm.cmd run dev`. |
-
-### Stop the application
-
-Press `Ctrl+C` in the frontend and backend terminals, then run from the repository root:
+From frontend, after installing dependencies:
 
 ```powershell
-docker compose down
+npm.cmd run build
 ```
 
-The MySQL volume is retained, so database data persists between runs.
+The outputs are backend/target/ and frontend/dist/. On Linux/macOS use ./mvnw and npm; ensure backend/mvnw is executable if needed.
+
+## Configuration
+
+| Variable | Default / meaning |
+|---|---|
+| DB_PORT | 3308; changing this does not change the Compose port mapping |
+| DB_URL | Full MySQL JDBC URL, overriding the default URL |
+| DB_USERNAME / DB_PASSWORD | Local database account from docker-compose.yml |
+| SERVER_PORT | 8080 |
+| FRONTEND_ORIGIN | http://localhost:5173; must match the browser origin |
+| SESSION_COOKIE_SECURE | false for local HTTP; session cookie secure attribute |
+| VITE_API_URL | http://localhost:8080/api; frontend build/dev setting |
+
+Set backend variables in its terminal before starting Maven. Frontend variables may be set in frontend/.env.local; restart Vite after a change. Do not commit private environment files.
+
+## Manual verification
+
+1. Sign in as administrator and register a student and a teacher. Search by their generated number and edit their data.
+2. Enrol the active student in course units, record results and open the student profile. Change a grade and reload the profile to observe recalculation.
+3. Compare a student with results, one with only an entry grade and one without either source. These scenarios require preparing data manually.
+4. Check the area detail, password change, account access state and ownership restrictions for photos.
+5. Restart the backend with the same MySQL volume and confirm persistence.
+
+The review must report the checks actually performed. These instructions do not claim that a clean-clone check, browser review or MySQL verification has already been completed by the team.
+
+## Stop
+
+Use Ctrl+C in the frontend/backend terminals and docker compose down at the root. The database volume is retained. If a port is occupied, identify the existing process/container before changing configuration or stopping it.
